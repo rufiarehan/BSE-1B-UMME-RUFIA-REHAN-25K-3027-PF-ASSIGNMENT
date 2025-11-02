@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Function prototypes
+
 void encodeMessage(char message[]);
 void decodeMessage(char message[]);
 void reverseManual(char str[]);
@@ -18,7 +18,7 @@ int main() {
         printf("3. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-        getchar(); // consume newline left by scanf
+        getchar();
 
         if (choice == 3) {
             printf("Exiting program. Goodbye!\n");
@@ -31,7 +31,7 @@ int main() {
         while ((ch = getchar()) != '\n' && i < 199) {
             message[i++] = ch;
         }
-        message[i] = '\0'; // end manually
+        message[i] = '\0'; 
 
         switch (choice) {
             case 1:
@@ -56,7 +56,7 @@ int main() {
     return 0;
 }
 
-// Reverse a string manually (no strlen)
+
 void reverseManual(char str[]) {
     int len = 0;
     while (str[len] != '\0') {
@@ -72,14 +72,14 @@ void reverseManual(char str[]) {
     }
 }
 
-// Toggle 2nd and 5th bits
+
 char toggleBits(char ch) {
-    ch = ch ^ (1 << 1); // toggle 2nd bit
-    ch = ch ^ (1 << 4); // toggle 5th bit
+    ch = ch ^ (1 << 1);
+    ch = ch ^ (1 << 4); 
     return ch;
 }
 
-// Encode message (reverse + toggle bits)
+
 void encodeMessage(char message[]) {
     reverseManual(message);
     int i = 0;
@@ -89,7 +89,7 @@ void encodeMessage(char message[]) {
     }
 }
 
-// Decode message (toggle bits + reverse)
+
 void decodeMessage(char message[]) {
     int i = 0;
     while (message[i] != '\0') {
@@ -98,4 +98,5 @@ void decodeMessage(char message[]) {
     }
     reverseManual(message);
 }
+
 
