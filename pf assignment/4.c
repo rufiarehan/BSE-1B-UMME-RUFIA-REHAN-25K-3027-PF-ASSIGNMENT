@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-// Function prototypes
+
 void pushElement(int arr[], int *top, int limit);
 void popElement(int arr[], int *top);
 void peekElement(int arr[], int top);
 void displayElements(int arr[], int top);
 
 int main() {
-    int data[100];      // normal array
-    int top = -1;       // top of stack
+    int data[100];      
+    int top = -1;       
     int limit, choice;
 
     printf("Enter maximum size of list: ");
@@ -50,7 +50,6 @@ int main() {
     return 0;
 }
 
-// Insert a value (push)
 void pushElement(int arr[], int *top, int limit) {
     int value;
     if (*top == limit - 1) {
@@ -64,7 +63,7 @@ void pushElement(int arr[], int *top, int limit) {
     }
 }
 
-// Remove a value (pop)
+
 void popElement(int arr[], int *top) {
     if (*top == -1) {
         printf("List is empty (Underflow).\n");
@@ -74,7 +73,7 @@ void popElement(int arr[], int *top) {
     }
 }
 
-// Show the top value
+
 void peekElement(int arr[], int top) {
     if (top == -1)
         printf("No data (empty).\n");
@@ -82,7 +81,7 @@ void peekElement(int arr[], int top) {
         printf("Top element: %d\n", arr[top]);
 }
 
-// Display all values
+
 void displayElements(int arr[], int top) {
     int i;
     if (top == -1)
@@ -93,4 +92,5 @@ void displayElements(int arr[], int top) {
             printf("%d\n", arr[i]);
     }
 }
+
 
